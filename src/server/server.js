@@ -28,7 +28,7 @@ io.on('connection', function (socket) {
   //Do stuff here
   socket.on('command', function(data) {
     console.log(socket.id + ' sent command ' + data.cmd);
-    port.write(data.cmd);
+    myPort.write(data.cmd);
   })
 });
 

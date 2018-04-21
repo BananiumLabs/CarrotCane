@@ -26,16 +26,14 @@ window.onload = function() {
     'use strict';
     
     var btn1 = document.getElementById('1');
-    btn1.onclick = buttonClick(btn1.id);
+    var btn2 = document.getElementById('2');
+    btn1.onclick = function() {sendCommand('LED0ON')};
+    btn2.onclick = function() {sendCommand('LED0OFF')};
     connect();
 };
 
-function buttonClick(id) {
-    console.log('click');
-    if(id === 1) {
-        console.log(1);
-        this.socket.emit('command', {cmd: 'LED0ON'});
-    }
+function sendCommand(cmd) {
+        socket.emit('command', {cmd: cmd + '\n'});
 }
 
 function SetupSocket(socket) {
