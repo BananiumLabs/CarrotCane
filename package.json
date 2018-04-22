@@ -19,6 +19,8 @@
     "pleasedothis": "ionic cordova build ios",
     "configureplatform": "ionic cordova platform add ios",
     "ionicserve": "ionic serve",
-    "gulpdownload": "npm install gulp-cli -g"
+    "gulpdownload": "npm install gulp-cli -g",
+    "geodownload": "ionic cordova plugin add cordova-plugin-geolocation --variable"
+    
   }
 }
