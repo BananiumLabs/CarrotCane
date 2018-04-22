@@ -28,8 +28,24 @@ io.on('connection', function (socket) {
   //Do stuff here
   socket.on('command', function(data) {
     console.log(socket.id + ' sent command ' + data.cmd);
-    myPort.write(data.cmd);
+    if(myPort)
+      myPort.write(data.cmd);
+    else {
+      // console.warn('Arduino is not connected! Command failed to send.');
+      socket.broadcast.emit('err', {msg: 'CarrotCane is not connected to the server!'});
+    }
   })
+
+  if(myPort) {
+    myPort.on('data', (data) => {
+      /* get a buffer of data from the serial port */
+      console.log(data.toString());
+    });
+  }
+  else {
+    console.warn('Arduino is not connected!');
+    socket.broadcast.emit('err', { msg: 'CarrotCane is not connected to the server! Please connect and refresh the page.' });
+  }
 });
 
 var serverPort = process.env.PORT || config.port;
