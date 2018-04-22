@@ -36,6 +36,11 @@ io.on('connection', function (socket) {
     }
   })
 
+  socket.on('coordinates', function(data) {
+    console.log(data.lat + ', ' + data.long);
+    socket.broadcast.emit('coordTransfer', data);
+  });
+
   if(myPort) {
     myPort.on('data', (data) => {
       /* get a buffer of data from the serial port */
