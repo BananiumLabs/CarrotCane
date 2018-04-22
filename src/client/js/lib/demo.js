@@ -374,8 +374,9 @@ demo = {
     initGoogleMaps: function() {
         var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
         var mapOptions = {
-            zoom: 13,
+            zoom: 15,
             center: myLatlng,
+            mapTypeId: 'satellite',
             scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
             styles: [{
                 "featureType": "water",
@@ -523,26 +524,29 @@ demo = {
                 }
             });
         
-            $.notify({
-                icon: "nc-icon nc-app",
-                message: "ERROR: CarrotCane not detected!"
+            // $.notify({
+            //     icon: "nc-icon nc-app",
+            //     message: "ERROR: CarrotCane not detected!"
 
-            }, {
-                    type: type[4],
-                    timer: 8000,
-                    placement: {
-                        from: from,
-                        align: align
-                    }
-                });
+            // }, {
+            //         type: type[4],
+            //         timer: 8000,
+            //         placement: {
+            //             from: from,
+            //             align: align
+            //         }
+            //     });
     },
 
     setLocation: function() {
-        var coordInfo = coords.innerHTML.substring(19).trim();
+        var coordInfo = coords.innerHTML.substring(20).trim();
+        var latitude, longitude;
         if (coordInfo.length > 0) {
-            var latitude = coordInfo.substring(0, coordInfo.indexOf(',')).trim();
-            var longitude = coordInfo.substring(coordInfo.indexOf(',') + 1);
+            latitude = coordInfo.substring(0, coordInfo.indexOf(',')).trim();
+            longitude = coordInfo.substring(coordInfo.indexOf(',') + 1);
         }
+        console.log(latitude);
+        console.log(longitude);
         var latlng = new google.maps.LatLng(latitude, longitude);
         marker.setPosition(latlng);
         if(map)
