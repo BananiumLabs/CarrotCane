@@ -11,6 +11,11 @@ Created for TinoHacks II, April 21-22 2018
  - Attach a smartphone to provide live GPS tracking and video feed
  - Online supervisor console- give voice directions and monitor video feed for caneholder
 
+### Branch
+ - Master contains stable release
+ - Arduino contains C .ino files for Arduino IDE (avrdude)
+ - Mobile contains mobile ionic code
+ 
 ### Technologies
 [Click here](https://dashboard.heroku.com/apps/hackerware) to access the Heroku console.
 
