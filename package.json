@@ -1,7 +1,7 @@
 {
-    "name": "hackerware",
+    "name": "carrotcane",
     "version": "1.0.0",
-    "description": "Online console for Arduino",
+    "description": "Cane Attachment for the Visually Impaired",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,11 +12,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/BananiumLabs/AtomBlast.io.git"
+        "url": "https://github.com/BananiumLabs/CarrotCane.git"
     },
     "keywords": [
-        "io",
-        "game"
     ],
     "author": "Bananium Labs",
     "license": "MIT",
@@ -26,9 +24,9 @@
         "Eric Qian <eric@enumc.com> (https://github.com/EnumC)"
     ],
     "bugs": {
-        "url": "https://github.com/BananiumLabs/AtomBlast.io/issues"
+        "url": "https://github.com/BananiumLabs/CarrotCane/issues"
     },
-    "homepage": "https://github.com/BananiumLabs/AtomBlast.io#readme",
+    "homepage": "https://github.com/BananiumLabs/CarrotCane#readme",
     "dependencies": {
         "express": "^4.13.0",
         "serialport": "^6.2.0",

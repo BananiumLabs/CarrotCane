@@ -1,15 +1,20 @@
-# Hackerware
+# CarrotCane
 
 ### About
 
-Simple online console for beginners in Arduino development.
+CarrotCane is a DIY cane attachment to assist the blind and visually impaired.
 
 Created for TinoHacks II, April 21-22 2018
 
-### Server
+### Feature List
+ - Automatic detection of nearby objects with audible alarm and feedback when approaching too quickly
+ - Attach a smartphone to provide live GPS tracking and video feed
+ - Online supervisor console- give voice directions and monitor video feed for caneholder
+
+### Technologies
 [Click here](https://dashboard.heroku.com/apps/hackerware) to access the Heroku console.
 
-Hackerware runs on a Node.js server with Socket.io.
+CarrotCane runs on a Node.js server with Socket.io, with Arduino hardware and a mobile interface written in Ionic.
 
 ### Collaborators
  - [Ben Cuan](https://github.com/dbqeo)
