@@ -49,7 +49,7 @@ function sendCommand(cmd) {
 function SetupSocket(socket) {
     //Debug
     console.log('Socket:',socket);
-    if(socket.connected == false){
+    if (socket.connected == false) {
         var errConfirm = confirm("FATAL: Socket Connection To Server Failed. CarrotCane Will Not Run Correctly. Exit Application?");
         if (errConfirm == true) {
             window.close();
@@ -57,7 +57,6 @@ function SetupSocket(socket) {
             alert("DEBUG: Please check console messages for errors.");
         }
     }
-
     var coords = document.getElementById('coords');
     socket.on('coordTransfer', function(data) {
        

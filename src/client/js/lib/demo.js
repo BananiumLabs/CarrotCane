@@ -512,7 +512,7 @@ demo = {
         
 
             $.notify({
-                icon: "nc-icon nc-app",
+                icon: "nc-icon nc-check-2",
                 message: "Success! CarrotCane Detected!"
 
             }, {
