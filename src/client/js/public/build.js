@@ -49,6 +49,9 @@ function sendCommand(cmd) {
 function SetupSocket(socket) {
     //Debug
     console.log('Socket:',socket);
+    if(socket.connected == false)
+        alert("Socket Connection To Server Failed. CarrotCane Will Not Run Correctly.")
+        window.close();
 
     var coords = document.getElementById('coords');
     socket.on('coordTransfer', function(data) {
