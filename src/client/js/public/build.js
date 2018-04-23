@@ -50,8 +50,13 @@ function SetupSocket(socket) {
     //Debug
     console.log('Socket:',socket);
     if(socket.connected == false)
-        alert("Socket Connection To Server Failed. CarrotCane Will Not Run Correctly.")
-        window.close();
+        var errConfirm = confirm("FATAL: Socket Connection To Server Failed. CarrotCane Will Not Run Correctly. Exit Application?")
+        if (errConfirm == true) {
+            window.close();
+        } else {
+            alert("DEBUG: Please check console messages for errors.")
+        }
+        
 
     var coords = document.getElementById('coords');
     socket.on('coordTransfer', function(data) {
