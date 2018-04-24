@@ -2102,6 +2102,10 @@ fieldset[disabled] .form-control {
     left: 7px;
 }
 
+.notification-link a {
+    color: #ef5350 !important;
+}
+
 .navbar .navbar-nav .dropdown-toggle:after {
     display: inline-block;
     width: 0;

@@ -1,7 +1,6 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 var socket;
 var global = require('./global.js');
-// var demo = require('./lib/demo.js');
 var isConnected = true;
 
 //Get screen dimensions
@@ -11,10 +10,11 @@ var screenHeight = window.innerHeight;
 function connect() {
 
     //Production
-    // socket = io.connect(global.SERVER_IP);
+    socket = io.connect(cookies.getCookie('server'));
 
     //Debugging and Local serving
-    if(!socket) {
+    if(socket.disconnected) {
+        socket = socket.disconnect();
         console.log('Failed to connect, falling back to localhost');
         socket = io.connect(global.LOCAL_HOST);
     }
@@ -49,17 +49,8 @@ function sendCommand(cmd) {
 function SetupSocket(socket) {
     //Debug
     console.log('Socket:',socket);
-    if (socket.connected == false) {
-        var errConfirm = confirm("FATAL: Socket Connection To Server Failed. CarrotCane Will Not Run Correctly. Exit Application?");
-        if (errConfirm == true) {
-            window.close();
-        } else {
-            alert("DEBUG: Please check console messages for errors.");
-        }
-    }
     var coords = document.getElementById('coords');
     socket.on('coordTransfer', function(data) {
-       
         coords.innerHTML = 'Current Coordinates: ' + data.lat + ', ' + data.long;
     });
 }
